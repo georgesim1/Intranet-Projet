@@ -1,0 +1,67 @@
+.card-title{
+    font-family: 'Oswald';
+    font-size: 30px;
+}
+
+.card {
+    border: none;
+    display: flex;
+
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.city {
+    font-weight: 500;
+    color: #808080;
+}
+
+.email {
+    font-weight: 400;
+    color: #FA8072;
+}
+
+.phone {
+    font-weight: 500;
+    color: #808080;
+}
+
+.date {
+    font-weight: 500;
+    color: #808080;
+}
+
+.card-img, .card-img-top {
+    height: 15rem;
+    width: auto;
+}
+
+.service {
+    border-radius: 30px;
+    font-family: 'Oswald';
+    position: absolute;
+    top: 6px;
+    right: 4px;
+}
+
+.container-btn {
+    vertical-align: middle;
+}
+
+.name-age {
+    display: flex;
+    align-items:center ;
+}
+
+.age {
+ font-size: 20px;
+ font-weight: 500;
+ color: #808080;
+}
