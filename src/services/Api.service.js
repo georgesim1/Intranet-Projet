@@ -60,7 +60,7 @@ export async function loginUser(credentials) {
    // Modify a user 
    export async function Modify (token,credentials,id) {
     console.log(credentials);
-    return fetch('http://localhost:7000/api/collaborateurs' + id,
+    return fetch('http://localhost:7000/api/collaborateurs/' + id,
     {
       method: 'PUT', 
       headers: {
@@ -71,7 +71,7 @@ export async function loginUser(credentials) {
     })
       .then(data => data.json()).then(res=>res);
    }
-   // Update details of the users
+   // Create details of the users
   export async function AddUser(token,credentials) {
   console.log(credentials);
   return fetch('http://localhost:7000/api/collaborateurs',

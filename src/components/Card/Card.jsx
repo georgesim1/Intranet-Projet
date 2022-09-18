@@ -12,8 +12,6 @@ import {useDispatch} from 'react-redux'
 // import {useEffect} from 'react';
 import { getUsers } from '../../services/Api.service';
 
-
-
 function UserCard({user}) {
   const token = JSON.parse(localStorage.getItem('token'));
   console.log(user)
@@ -27,13 +25,13 @@ function UserCard({user}) {
     } 
 
   }
-
+  // Full single card component
   return (
     <div className="mt-5">
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={user.photo} />
       <Card.Body>
-        <Button className='service'>{user.service}</Button>
+      <Button className='service'>{user.service}</Button>
         <div className='name-age'>
         <Card.Title>{user.firstname}</Card.Title>
         <Card.Text className='age ms-2'>({birthdate} ans)</Card.Text>
@@ -41,11 +39,11 @@ function UserCard({user}) {
         <Card.Text className='city'>{user.city}, {user.country}</Card.Text>
         <Card.Text className='email'><MailIcon fontSize="small" /><u>{user.email}</u></Card.Text>
         <Card.Text className='phone'><CallIcon fontSize="small" />{user.phone}</Card.Text>
-        <Card.Text className='date mb-3'><CakeIcon fontSize="small" />Anniversaire : {user.birthdate}</Card.Text>
+        <Card.Text className='date mb-3'><CakeIcon className='mb-2' fontSize="small" />Anniversaire : {user.birthdate}</Card.Text>
         {token.user.isAdmin && 
         <div className='container-btn'>
-        <Button href="/updateuser" className='mx-2'>Editer</Button>
-        <Button onClick={onDelete}>{"Supprimer"}</Button>
+        <Button href="/updateuser" className='mx-2 edit-button'>Editer</Button>
+        <Button onClick={onDelete} className='mx-2 delete-button'>{"Supprimer"}</Button>
         </div>
         }
       </Card.Body>

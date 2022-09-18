@@ -1,33 +1,32 @@
 import Container from 'react-bootstrap/Container';
 import { Navbar, Nav, Button } from 'react-bootstrap'
-import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-import HouseIcon from '@mui/icons-material/House';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import '../Header/header.css'
 
 const logout = () => {
   localStorage.clear();
-  window.location = "/";
+  window.location = "/homepage";
 };
 
 function TextLinkExample() {
   const token = JSON.parse(localStorage.getItem('token'));
   return (
-    <Navbar className=''>
-      <Container>
-        <Navbar.Brand href="/homepage">Intranet George</Navbar.Brand>
+    <Navbar expand="lg">
+      <Container >
+        <Navbar.Brand href="/homepage">
+          <img src="https://www.ecole-multimedia.com/data/lecole-multimedia-logo.png" alt="" />
+        </Navbar.Brand>
         <Nav>
-            <Nav.Link href="/homepage"><HouseIcon fontSize="medium" />Home</Nav.Link>
-            <Nav.Link href="/list"><FormatListBulletedIcon fontSize="medium" />List</Nav.Link>
-            <Nav.Link href="/edituser"><AccountCircleIcon fontSize="medium" />Profil</Nav.Link>
+            <Nav.Link href="/homepage">Home</Nav.Link>
+            <Nav.Link href="/edituser">Mon Profil</Nav.Link>
+            <Nav.Link href="/list">List d'utilisateurs</Nav.Link>
             {token.user.isAdmin && 
-            <Nav.Link href="/adduser"><PersonAddAlt1Icon fontSize="medium" />Ajouter Utilisateur</Nav.Link>
+            <Nav.Link href="/adduser">Ajouter Utilisateur</Nav.Link>
             }
         </Nav>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            <Button className="logout" onClick={logout} href="#">Logout</Button>
+          <Navbar.Text className='justify-content-md-end'>
+          <span className="logout" onClick={logout} href="#">Logout</span>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>

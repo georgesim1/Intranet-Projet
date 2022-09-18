@@ -7,7 +7,6 @@ import { store } from './components/store/store'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-
   <>
   <Provider store ={store}>
     <App />

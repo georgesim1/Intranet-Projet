@@ -18,15 +18,15 @@ export default function List() {
   }, [])
   ;
   
-  return(
-    <div className='wrapper'>
-      <div className='card-wrapper container'>
-      {
-        collaboratersToDisplay && 
-        collaboratersToDisplay.map(user => <UserCard user={user} />) 
-      }
+    return(
+      <div className='wrapper'>
+        <div className='card-wrapper container'>
+        {
+          collaboratersToDisplay && 
+          collaboratersToDisplay.map(user => <UserCard user={user} />) 
+        }
+        </div>
       </div>
-    </div>
-  );
-  
-}
+    );
+    
+  }

@@ -1,9 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import { AddUser } from '../../services/Api.service';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import '../AddUserPage/AddUser.css'
 
 export default function addUserForm() {
   const [gender, setgender] = useState ("")
@@ -17,6 +17,8 @@ export default function addUserForm() {
   const [country, setcountry] = useState ("")
   const [photo, setphoto] = useState ("")
   const [service, setservice] = useState ("")
+  const token = JSON.parse(localStorage.getItem('token'));
+  const user = token.user
 
   function onSubmitUser(event) {
     event.preventDefault()
@@ -38,10 +40,23 @@ export default function addUserForm() {
     AddUser (token.token,newUser)
   }
 
+  useEffect(() => {
+    setemail(user.email);
+    setphone(user.phone);
+    setgender(user.gender);
+    setcity(user.city);
+    setcountry(user.country);
+    setphoto(user.photo);
+    setfirstname(user.firstname);
+    setlastname(user.lastname);
+    setbirthdate(user.birthdate);
+    setservice(user.service);
+}, []);
+
   return (
-    <div className='container'>
-      <h4 className='text-center'>Créer un utilisateur</h4>
+    <div className='container form-wrapper'>
       <Form>
+      <h4 className='text-center'>Créer un utilisateur</h4>
       <Form.Label>Civilite :</Form.Label>
       <Form.Select onChange={(event) => setgender(event.target.value) }
       aria-label="Default select example">
@@ -98,9 +113,12 @@ export default function addUserForm() {
           <Form.Label>Url de la photo :</Form.Label>
           <Form.Control onChange={(event) => setphoto(event.target.value) } type="link" placeholder="https://" />
         </Form.Group>
-        <Button onClick={onSubmitUser} variant="primary" type="submit">
+          <div className='text-center mt-3'>
+          <span onClick={onSubmitUser} type="submit" className='add-btn'>
            Ajouter
-        </Button>
+          </span>
+          </div>
+      
       </Form>
     </div>
   );

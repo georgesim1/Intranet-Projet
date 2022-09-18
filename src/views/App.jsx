@@ -9,6 +9,7 @@ import useToken from '../components/App/useToken';
 import NavBar from '../components/Header/header';
 import AddUser from '../components/AddUserPage/AddUser';
 import UpdateUser from '../components/UpdateUser/UpdateUser'
+import SearchBar from '../components/SearchBar/searchbar';
 
 import '../assets/css/App.css';
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <div className="wrapper">
       <NavBar /> 
+      {/* <SearchBar /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/homepage" element={<HomePage />} />

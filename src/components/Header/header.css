@@ -1,0 +1,36 @@
+.logout {
+    border-radius: 30px !important;
+    color: #fff !important;
+    background: #000;
+    padding: 12px !important;
+    font-family: 'Oswald' !important;
+}
+
+.logout:hover {
+    color: #fff !important;
+    background: #000;
+    cursor: pointer;
+}
+
+.navbar {
+    margin: 0px 0px 40px 0px;
+    background-color: #fff;
+    padding: 16px 0px !important;
+}
+
+.navbar a:hover {
+    color: #FA8072;
+    margin: 0px 5px 0px 5px;
+    border-bottom: 2px solid #FA8072 ;
+}
+
+.navbar a {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px 12px 0px 0px;
+}
+
+.navbar-brand img{
+    height: 60px;
+    width: auto;
+}
